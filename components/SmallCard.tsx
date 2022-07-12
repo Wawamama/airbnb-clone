@@ -15,7 +15,7 @@ const SmallCard: React.FC<SmallCardProps> = ({
 				<Image src={img} layout='fill' className='rounded-lg' />
 			</div>
 			<div className='ml-3'>
-				<h2>{location}</h2>
+				<h2 className='font-semibold'>{location}</h2>
 				<h3 className='text-gray-600'>{distance}</h3>
 			</div>
 		</div>
