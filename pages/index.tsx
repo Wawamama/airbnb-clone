@@ -7,6 +7,9 @@ import { LocationData } from './api/explore'
 import SmallCard from '../components/SmallCard'
 import { ActivityData } from './api/activities'
 import MediumCard from '../components/MediumCard'
+import LargeCard from '../components/LargeCard'
+import Footer from '../components/Footer'
+import footerElements from './../data/footer'
 
 interface HomeProps {
 	locations: LocationData
@@ -23,7 +26,7 @@ const Home: NextPage<HomeProps> = ({ locations, activities }) => {
 			<Header />
 			<Banner />
 			<main className='max-w-7xl mx-auto px-8 sm:px-16'>
-				<section className='py-3'>
+				<section className='py-6'>
 					<h2 className='text-4xl pb-5 font-semibold text-gray-900'>
 						Explore Nearby
 					</h2>
@@ -33,7 +36,7 @@ const Home: NextPage<HomeProps> = ({ locations, activities }) => {
 						))}
 					</div>
 				</section>
-				<section className='py-3'>
+				<section className='py-6'>
 					<h2 className='text-4xl pb-5 font-semibold text-gray-900'>
 						Live Anywhere
 					</h2>
@@ -43,7 +46,14 @@ const Home: NextPage<HomeProps> = ({ locations, activities }) => {
 						))}
 					</div>
 				</section>
+				<LargeCard
+					img='https://res.cloudinary.com/daxjdptqt/image/upload/v1657635569/airbnb-clone/illustration_qu5odg.webp'
+					title='The Greatest Natural Homes'
+					description='Wishlist curated by Airnbn.'
+					buttonTxt='Get Inspired'
+				/>
 			</main>
+			<Footer footerElements={footerElements.elements} />
 		</div>
 	)
 }
