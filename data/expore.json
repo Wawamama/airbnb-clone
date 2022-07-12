@@ -1,0 +1,42 @@
+[
+    {
+        "img": "https://res.cloudinary.com/daxjdptqt/image/upload/v1657536715/airbnb-clone/mini-1_toonhm.webp",
+        "location": "London",
+        "distance": "45-min drive"
+    },
+    {
+        "img": "https://res.cloudinary.com/daxjdptqt/image/upload/v1657536715/airbnb-clone/mini-2_l9i7mv.webp",
+        "location": "Paris",
+        "distance": "45-min drive"
+    },
+    {
+        "img": "https://res.cloudinary.com/daxjdptqt/image/upload/v1657536715/airbnb-clone/mini-1_toonhm.webp",
+        "location": "Rio De Janeiro",
+        "distance": "1.5-hour drive"
+    },
+    {
+        "img": "https://res.cloudinary.com/daxjdptqt/image/upload/v1657536715/airbnb-clone/mini-2_l9i7mv.webp",
+        "location": "Madrid",
+        "distance": "45-min drive"
+    },
+    {
+        "img": "https://res.cloudinary.com/daxjdptqt/image/upload/v1657536715/airbnb-clone/mini-1_toonhm.webp",
+        "location": "Las Vegas",
+        "distance": "5-min drive"
+    },
+    {
+        "img": "https://res.cloudinary.com/daxjdptqt/image/upload/v1657536715/airbnb-clone/mini-2_l9i7mv.webp",
+        "location": "Tokyo",
+        "distance": "1-hour drive"
+    },
+    {
+        "img": "https://res.cloudinary.com/daxjdptqt/image/upload/v1657536715/airbnb-clone/mini-1_toonhm.webp",
+        "location": "Istanbul",
+        "distance": "45-min drive"
+    },
+    {
+        "img": "https://res.cloudinary.com/daxjdptqt/image/upload/v1657536715/airbnb-clone/mini-2_l9i7mv.webp",
+        "location": "Roma",
+        "distance": "15-min drive"
+    }
+]
