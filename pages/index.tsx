@@ -49,7 +49,7 @@ const Home: NextPage<HomeProps> = ({ locations, activities }) => {
 				<LargeCard
 					img='https://res.cloudinary.com/daxjdptqt/image/upload/v1657635569/airbnb-clone/illustration_qu5odg.webp'
 					title='The Greatest Natural Homes'
-					description='Wishlist curated by Airnbn.'
+					description='Wishlist curated by Airbnb.'
 					buttonTxt='Get Inspired'
 				/>
 			</main>
