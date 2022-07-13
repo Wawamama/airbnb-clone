@@ -61,8 +61,12 @@ const Home: NextPage<HomeProps> = ({ locations, activities }) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const locations = exploreData
-	const activities = activitiesData
+	const exploreURL =
+		'https://res.cloudinary.com/daxjdptqt/raw/upload/v1657724461/airbnb-clone/expore_ouyvld.json'
+	const activitiesURL =
+		'https://res.cloudinary.com/daxjdptqt/raw/upload/v1657724471/airbnb-clone/activities_dt3dlr.json'
+	const { data: locations } = await axios(exploreURL)
+	const { data: activities } = await axios(activitiesURL)
 	return {
 		props: {
 			locations,
