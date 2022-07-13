@@ -10,6 +10,8 @@ import MediumCard from '../components/MediumCard'
 import LargeCard from '../components/LargeCard'
 import Footer from '../components/Footer'
 import footerElements from './../data/footer'
+import exploreData from './../data/expore.json'
+import activitiesData from './../data/activities.json'
 
 interface HomeProps {
 	locations: LocationData
@@ -59,8 +61,8 @@ const Home: NextPage<HomeProps> = ({ locations, activities }) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const { data: locations } = await axios(`${process.env.API_URL}/explore`)
-	const { data: activities } = await axios(`${process.env.API_URL}/activities`)
+	const locations = exploreData
+	const activities = activitiesData
 	return {
 		props: {
 			locations,
