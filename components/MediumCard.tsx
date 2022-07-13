@@ -1,5 +1,5 @@
 import React from 'react'
-import { Activity } from '../pages/api/activities'
+import { Activity } from './../data/activities.types'
 import Image from 'next/image'
 
 interface MediumCardProps {

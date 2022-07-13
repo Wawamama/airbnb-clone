@@ -9,6 +9,7 @@ import {
 
 const LOGO_URL =
 	'https://res.cloudinary.com/daxjdptqt/image/upload/v1657294921/airbnb-clone/580b57fcd9996e24bc43c513_wj4wyq.png'
+
 const Header: React.FC = ({}) => {
 	return (
 		<header className='sticky top-0 z-50 grid grid-cols-3 shadow-md p-5 md:px-10 bg-white'>
