@@ -1,14 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import explore from '../../data/expore.json'
-
-export interface Location {
-	img: string
-	location: string
-	distance: string
-}
-
-export type LocationData = Location[]
+import { LocationData } from '../../data/explore.types'
 
 export default function handler(
 	req: NextApiRequest,
