@@ -1,5 +1,5 @@
 import React from 'react'
-import { Location } from '../pages/api/explore'
+import { Location } from './../data/explore.types'
 import Image from 'next/image'
 
 interface SmallCardProps {
