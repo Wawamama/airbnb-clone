@@ -10,8 +10,6 @@ import MediumCard from '../components/MediumCard'
 import LargeCard from '../components/LargeCard'
 import Footer from '../components/Footer'
 import footerElements from './../data/footer'
-import exploreData from './../data/expore.json'
-import activitiesData from './../data/activities.json'
 
 interface HomeProps {
 	locations: LocationData
