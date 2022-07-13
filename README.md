@@ -2,7 +2,7 @@
 
 ## What is it?
 
-This is a clone of the Airbnb landing page, built to practice my front-end skills. 
+This is a clone of the Airbnb landing page that I built to practice my front-end skills. 
 
 
 ## The challenge
@@ -19,7 +19,7 @@ Users should be able to view the optimal layout for the site depending on their 
 
 ## Link 
 
-Solution URL: 
+Solution URL: [https://airbnb-clone-gold-eta.vercel.app](https://airbnb-clone-gold-eta.vercel.app/)
 
 
 
