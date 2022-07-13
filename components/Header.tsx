@@ -21,7 +21,7 @@ const Header: React.FC = ({}) => {
 					objectPosition='left'
 				/>
 			</div>
-			<div className='flex items-center md:border-2 rounded-full justify-between p-2 md:shadow-sm max-w-md justify-self-stretch'>
+			<div className='flex items-center md:border-2 rounded-full justify-between p-2 md:shadow-sm justify-self-stretch'>
 				<input
 					className='bg-transparent outline-none flex-grow text-gray-500 placeholder-gray-400 md:ml-2'
 					type='text'
