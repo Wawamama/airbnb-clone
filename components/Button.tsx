@@ -20,7 +20,7 @@ const Button: React.FC<ButtonProps> = ({
 			onClick={onClick}
 			className={`${
 				rounded && 'rounded-full'
-			} px-2 py-1 text-sm flex-grow ${bgColor} ${txColor}`}
+			} px-2 py-1 text-lg md:text-sm flex-grow ${bgColor} ${txColor}`}
 		>
 			{title}
 		</button>
