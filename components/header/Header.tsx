@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import {
 	SearchIcon,
@@ -6,11 +6,17 @@ import {
 	MenuIcon,
 	UserCircleIcon,
 } from '@heroicons/react/solid'
+import 'react-date-range/dist/styles.css'
+import 'react-date-range/dist/theme/default.css'
+import DatePicker from '../DatePicker'
+import GuestNumberField from './GuestNumberField'
 
 const LOGO_URL =
 	'https://res.cloudinary.com/daxjdptqt/image/upload/v1657294921/airbnb-clone/580b57fcd9996e24bc43c513_wj4wyq.png'
 
 const Header: React.FC = ({}) => {
+	const [searchInput, setSearchInput] = useState<string>('')
+
 	return (
 		<header className='sticky top-0 z-50 grid grid-cols-3 shadow-md p-5 md:px-10 bg-white'>
 			<div className='relative flex items-center h-10 cursor-pointer my-auto'>
@@ -26,6 +32,8 @@ const Header: React.FC = ({}) => {
 					className='bg-transparent outline-none flex-grow text-gray-500 placeholder-gray-400 md:ml-2'
 					type='text'
 					placeholder='search here'
+					value={searchInput}
+					onChange={e => setSearchInput(e.target.value)}
 				/>
 				<SearchIcon className=' hidden md:inline-flex h-8 bg-red-400 rounded-full text-white p-2 cursor-pointer ml-2' />
 			</div>
@@ -37,6 +45,13 @@ const Header: React.FC = ({}) => {
 					<UserCircleIcon className='h-6' />
 				</div>
 			</div>
+
+			{searchInput && (
+				<DatePicker
+					searchLocation={searchInput}
+					setSearchLocation={setSearchInput}
+				/>
+			)}
 		</header>
 	)
 }
