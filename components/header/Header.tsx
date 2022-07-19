@@ -10,20 +10,38 @@ import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
 import DatePicker from '../DatePicker'
 import { useRouter } from 'next/router'
+import { Dates } from './dates.types'
 
 const LOGO_URL =
 	'https://res.cloudinary.com/daxjdptqt/image/upload/v1657294921/airbnb-clone/580b57fcd9996e24bc43c513_wj4wyq.png'
 
 const Header: React.FC = ({}) => {
 	const [searchInput, setSearchInput] = useState<string>('')
+	const [searchDates, setSearchDates] = useState<Dates>({
+		startDate: new Date(),
+		endDate: new Date(),
+	})
+	const { startDate, endDate } = searchDates
 	const router = useRouter()
 
 	const onCancel = (): void => {
 		setSearchInput('')
 	}
 
-	const onSearch = (): void => {
-		router.push('/search')
+	const onSearch = ({ startDate, endDate, nbGuests }: Dates): void => {
+		router.push({
+			pathname: '/search',
+			query: {
+				location: searchInput,
+				startDate: startDate.toISOString(),
+				endDate: endDate.toDateString(),
+				nbGuests,
+			},
+		})
+	}
+
+	const onDateSelection = ({ startDate, endDate }: Dates): void => {
+		setSearchDates({ startDate, endDate })
 	}
 
 	return (
@@ -58,7 +76,13 @@ const Header: React.FC = ({}) => {
 				</div>
 			</div>
 
-			{searchInput && <DatePicker onCancel={onCancel} onSearch={onSearch} />}
+			{searchInput && (
+				<DatePicker
+					onCancel={onCancel}
+					onSearch={onSearch}
+					onDateSelection={onDateSelection}
+				/>
+			)}
 		</header>
 	)
 }

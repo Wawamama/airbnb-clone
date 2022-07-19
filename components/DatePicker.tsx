@@ -1,17 +1,20 @@
 import { useRouter } from 'next/router'
-import React, { ReactNode, useState } from 'react'
+import React, { ReactNode, useState, useEffect } from 'react'
 import { DateRangePicker, Range, RangeKeyDict } from 'react-date-range'
 import Button from './Button'
+import { Dates } from './header/dates.types'
 import GuestNumberField from './header/GuestNumberField'
 
 interface DatePickerProps {
 	onCancel: () => void
-	onSearch: () => void
+	onSearch: (params: Dates) => void
+	onDateSelection: (dates: Dates) => void
 }
 
 const DatePicker: React.FC<DatePickerProps> = ({
 	onCancel,
 	onSearch,
+	onDateSelection,
 }: DatePickerProps) => {
 	const [startDate, setStartDate] = useState<Date | undefined>(new Date())
 	const [endDate, setEndDate] = useState<Date | undefined>(new Date())
@@ -27,6 +30,14 @@ const DatePicker: React.FC<DatePickerProps> = ({
 		setStartDate(rangesByKey.selection.startDate)
 		setEndDate(rangesByKey.selection.endDate)
 	}
+
+	useEffect(() => {
+		onDateSelection({
+			startDate: startDate as Date,
+			endDate: endDate as Date,
+			nbGuests: numberOfGuests,
+		})
+	}, [startDate, endDate])
 
 	return (
 		<div className='flex flex-col col-span-3 mx-auto mt-4'>
@@ -48,7 +59,17 @@ const DatePicker: React.FC<DatePickerProps> = ({
 					bgColor='bg-gray-300'
 					txColor='text-gray-700'
 				/>
-				<Button rounded title='Search' onClick={onSearch} />
+				<Button
+					rounded
+					title='Search'
+					onClick={() =>
+						onSearch({
+							startDate: startDate as Date,
+							endDate: endDate as Date,
+							nbGuests: numberOfGuests,
+						})
+					}
+				/>
 			</div>
 		</div>
 	)
