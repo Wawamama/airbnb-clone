@@ -15,7 +15,11 @@ import { Dates } from './dates.types'
 const LOGO_URL =
 	'https://res.cloudinary.com/daxjdptqt/image/upload/v1657294921/airbnb-clone/580b57fcd9996e24bc43c513_wj4wyq.png'
 
-const Header: React.FC = ({}) => {
+interface HeaderProps {
+	searchBarPlaceholder?: string
+}
+
+const Header: React.FC<HeaderProps> = ({ searchBarPlaceholder }) => {
 	const [searchInput, setSearchInput] = useState<string>('')
 	const [searchDates, setSearchDates] = useState<Dates>({
 		startDate: new Date(),
@@ -38,6 +42,7 @@ const Header: React.FC = ({}) => {
 				nbGuests,
 			},
 		})
+		setSearchInput('')
 	}
 
 	const onDateSelection = ({ startDate, endDate }: Dates): void => {
@@ -61,7 +66,7 @@ const Header: React.FC = ({}) => {
 				<input
 					className='bg-transparent outline-none flex-grow text-gray-500 placeholder-gray-400 md:ml-2'
 					type='text'
-					placeholder='search here'
+					placeholder={searchBarPlaceholder || 'search here'}
 					value={searchInput}
 					onChange={e => setSearchInput(e.target.value)}
 				/>
