@@ -9,17 +9,29 @@ import {
 import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
 import DatePicker from '../DatePicker'
-import GuestNumberField from './GuestNumberField'
+import { useRouter } from 'next/router'
 
 const LOGO_URL =
 	'https://res.cloudinary.com/daxjdptqt/image/upload/v1657294921/airbnb-clone/580b57fcd9996e24bc43c513_wj4wyq.png'
 
 const Header: React.FC = ({}) => {
 	const [searchInput, setSearchInput] = useState<string>('')
+	const router = useRouter()
+
+	const onCancel = (): void => {
+		setSearchInput('')
+	}
+
+	const onSearch = (): void => {
+		router.push('/search')
+	}
 
 	return (
 		<header className='sticky top-0 z-50 grid grid-cols-3 shadow-md p-5 md:px-10 bg-white'>
-			<div className='relative flex items-center h-10 cursor-pointer my-auto'>
+			<div
+				onClick={() => router.push('/')}
+				className='relative flex items-center h-10 cursor-pointer my-auto'
+			>
 				<Image
 					src={LOGO_URL}
 					layout='fill'
@@ -46,12 +58,7 @@ const Header: React.FC = ({}) => {
 				</div>
 			</div>
 
-			{searchInput && (
-				<DatePicker
-					searchLocation={searchInput}
-					setSearchLocation={setSearchInput}
-				/>
-			)}
+			{searchInput && <DatePicker onCancel={onCancel} onSearch={onSearch} />}
 		</header>
 	)
 }

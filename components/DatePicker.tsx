@@ -1,14 +1,18 @@
+import { useRouter } from 'next/router'
 import React, { ReactNode, useState } from 'react'
 import { DateRangePicker, Range, RangeKeyDict } from 'react-date-range'
 import Button from './Button'
 import GuestNumberField from './header/GuestNumberField'
 
 interface DatePickerProps {
-	searchLocation?: string
-	setSearchLocation: (input: string) => void
+	onCancel: () => void
+	onSearch: () => void
 }
 
-const DatePicker: React.FC<DatePickerProps> = (props: DatePickerProps) => {
+const DatePicker: React.FC<DatePickerProps> = ({
+	onCancel,
+	onSearch,
+}: DatePickerProps) => {
 	const [startDate, setStartDate] = useState<Date | undefined>(new Date())
 	const [endDate, setEndDate] = useState<Date | undefined>(new Date())
 	const [numberOfGuests, setNumberOfGuests] = useState<number>(1)
@@ -23,10 +27,6 @@ const DatePicker: React.FC<DatePickerProps> = (props: DatePickerProps) => {
 		setStartDate(rangesByKey.selection.startDate)
 		setEndDate(rangesByKey.selection.endDate)
 	}
-
-	const onCancel = (): void => props.setSearchLocation('')
-
-	const onSearch = (): void => console.log('Location: ' + props.searchLocation)
 
 	return (
 		<div className='flex flex-col col-span-3 mx-auto mt-4'>
