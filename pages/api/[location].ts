@@ -29,6 +29,7 @@ export const getLocationFlats = async (location: string) => {
 			summary: result.summary,
 			score: result.review_scores.review_scores_rating,
 			image: result.images.picture_url,
+			price: +result.price,
 		})
 	)
 }

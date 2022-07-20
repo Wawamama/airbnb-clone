@@ -9,6 +9,8 @@ import axios from 'axios'
 import { getLocationFlats } from './api/[location]'
 import { toTitleCase } from '../utils/toTitleCase'
 import InfoCard, { LocationInfo } from '../components/InfoCard'
+import intervalToDuration from 'date-fns/intervalToDuration'
+import { start } from 'repl'
 
 interface SearchProps {
 	searchResultsString: string
@@ -30,6 +32,14 @@ const SearchPage: React.FC<SearchProps> = ({ searchResultsString }) => {
 	const rangeDates: string = `${formattedStartDate} - ${formattedEndDate}`
 	const nbResults: number = searchResults ? searchResults.length : 0
 	const capitalizedLocation: string = toTitleCase(location as string)
+
+	const getNbDays = () => {
+		const interval = intervalToDuration({
+			start: new Date(startDate as string),
+			end: new Date(endDate as string),
+		})
+		return interval.days as number
+	}
 
 	return (
 		<>
@@ -59,9 +69,15 @@ const SearchPage: React.FC<SearchProps> = ({ searchResultsString }) => {
 						<p className='button'>Rooms and beds</p>
 						<p className='button'>More filters</p>
 					</div>
-					{searchResults.map((result: LocationInfo) => (
-						<InfoCard locationInfo={result} />
-					))}
+					<div className='flex flex-col'>
+						{searchResults.map((result: LocationInfo) => (
+							<InfoCard
+								locationInfo={result}
+								key={result.image}
+								nbDays={getNbDays()}
+							/>
+						))}
+					</div>
 				</section>
 			</main>
 			<Footer footerElements={footerElements.elements} />
