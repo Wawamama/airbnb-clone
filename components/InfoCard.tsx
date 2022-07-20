@@ -20,7 +20,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ locationInfo, nbDays }) => {
 	const totalPrice = price * nbDays
 
 	return (
-		<div className='flex flex-col md:flex-row py-7 px-2 hover:shadow-lg hover:opacity-80 transition duration-200 ease-out first:border-t border-b last:border-none'>
+		<div className='flex flex-col md:flex-row py-7 px-2 hover:shadow-lg hover:opacity-80 cursor-pointer transition duration-200 ease-out first:border-t border-b last:border-none'>
 			<div className='relative h-52 w-80 flex-shrink-0 ml-4 mb-4 md:ml-0 md:mb-0'>
 				<Image
 					src={image}
