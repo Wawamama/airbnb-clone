@@ -2,7 +2,7 @@
 
 ## What is it?
 
-This is a clone of the Airbnb landing page that I built to practice my front-end skills, using the sample data sets of Airbnb provided by [MongoDB](https://www.mongodb.com/docs/atlas/sample-data/sample-airbnb/).
+This is a clone of the Airbnb landing page that I built to practice my front-end skills, using the sample data sets of Airbnb [provided by MongoDB](https://www.mongodb.com/docs/atlas/sample-data/sample-airbnb/).
 
 
 ## The challenge
