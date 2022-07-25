@@ -3,13 +3,7 @@
 ## What is it?
 
 This is a clone of the Airbnb landing page that I built to practice my front-end skills, using the sample data sets of Airbnb [provided by MongoDB](https://www.mongodb.com/docs/atlas/sample-data/sample-airbnb/).
-
-
-## The challenge
-
-Build out a landing page and get it looking as close to the design as possible.
-Users should be able to view the optimal layout for the site depending on their device's screen size
-
+Common locations include: New York, Hong Kong, Rio De Janeiro, Porto, Montreal and more
 
 ## Technologies
 
