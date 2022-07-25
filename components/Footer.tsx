@@ -14,7 +14,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ footerElements }) => {
 	return (
-		<footer className='bg-gray-100'>
+		<footer className='bg-gray-100 mt-auto'>
 			<div className='max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-14 px-16 py-10'>
 				{footerElements.map(element => (
 					<div>

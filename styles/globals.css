@@ -7,3 +7,9 @@
 		@apply px-3 py-1 text-sm border rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-gray-100 transform duration-100 ease-out;
 	}
 }
+
+#__next {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}

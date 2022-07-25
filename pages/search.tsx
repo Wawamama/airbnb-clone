@@ -49,35 +49,47 @@ const SearchPage: React.FC<SearchProps> = ({ searchResultsString }) => {
 			<main className='flex'>
 				<section className='flex-grow px-10 pt-12'>
 					{nbResults > 0 && (
-						<p className='text-xs'>
-							{nbResults}+ stays on {rangeDates} - for {nbGuests} guests
-						</p>
+						<>
+							<p className='text-xs'>
+								{nbResults}+ stays on {rangeDates} - for {nbGuests} guests
+							</p>
+							<h1 className='text-2xl font-bold mt-2 mb-4'>
+								Stays in {capitalizedLocation}
+							</h1>
+						</>
 					)}
 					{!nbResults && (
-						<p className='text-md'>
-							Sorry, there is no stay available in {capitalizedLocation} on{' '}
-							{rangeDates}
-						</p>
+						<>
+							<p className='text-md'>
+								Sorry, there is no stay available in {capitalizedLocation} on{' '}
+								{rangeDates}
+							</p>
+							<h1 className='text-2xl font-bold mt-2 mb-4'>
+								Try another location
+							</h1>
+						</>
 					)}
-					<h1 className='text-2xl font-bold mt-2 mb-4'>
-						Stays in {capitalizedLocation}
-					</h1>
-					<div className='hidden lg:inline-flex mb-4 space-x-3 text-gray-800 whitespace-nowrap'>
-						<p className='button'>Cancellation flexibility</p>
-						<p className='button'>Type of place</p>
-						<p className='button'>Price</p>
-						<p className='button'>Rooms and beds</p>
-						<p className='button'>More filters</p>
-					</div>
-					<div className='flex flex-col'>
-						{searchResults.map((result: LocationInfo) => (
-							<InfoCard
-								locationInfo={result}
-								key={result.image}
-								nbDays={getNbDays()}
-							/>
-						))}
-					</div>
+
+					{nbResults > 0 && (
+						<div className='flex flex-col flex-grow'>
+							<div className='hidden lg:inline-flex mb-4 space-x-3 text-gray-800 whitespace-nowrap'>
+								<p className='button'>Cancellation flexibility</p>
+								<p className='button'>Type of place</p>
+								<p className='button'>Price</p>
+								<p className='button'>Rooms and beds</p>
+								<p className='button'>More filters</p>
+							</div>
+							<div className='flex flex-col'>
+								{searchResults.map((result: LocationInfo) => (
+									<InfoCard
+										locationInfo={result}
+										key={result.image}
+										nbDays={getNbDays()}
+									/>
+								))}
+							</div>
+						</div>
+					)}
 				</section>
 			</main>
 			<Footer footerElements={footerElements.elements} />
